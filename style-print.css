@@ -1,0 +1,71 @@
+/*
+Theme Name: Ralston & Bau theme 3.0
+Theme URI: http://www.ralstonbau.com/
+Description: Template for Ralston & Bau website.
+Version: 3.0
+Author: Loïc Horellou
+ 
+Creation Theme by Loïc Horellou || http://www.syclo.fr
+*/
+
+*{
+	outline-width:0;
+}
+
+body{
+	font-size:20px;
+	font-family:"Baskerville", "Times New Roman", Times, serif;
+	color:#000;
+	
+	margin:0 5cm;
+}
+
+p, h1, h2, h3, h4 ,h5, h6, ul, li{
+	font-weight:normal;
+}
+
+a{
+	color:#000;
+	text-decoration:none;
+}
+
+
+.menu-main-menu-container{
+	display:none;
+}
+
+#footer{
+	display:none;
+}
+
+.nav{
+	display:none;
+}
+
+#menu{
+	border-bottom:solid 2px #000;
+	margin-bottom:2xm;
+}
+
+#menu h1{
+	font-weight:normal;
+	width:330px;
+	height:60px;
+	background:url(images/logo-R&B.png) no-repeat;
+	display:inline-block;
+}
+
+
+#menu h1 a{
+	font-size:0;
+	letter-spacing:-5px;
+	position:absolute;
+	top:-5000px;
+}
+
+
+#player img{
+	max-width:100% !important;
+	height:auto !important;
+	display:block;
+}
