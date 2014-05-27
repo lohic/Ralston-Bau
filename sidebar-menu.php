@@ -3,7 +3,6 @@
     <li>temp</li>
 </ul>-->
 
-<h1  onclick="location.href='<?php bloginfo('url'); ?>';" style="cursor: pointer; " ><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 
 <?php
 //http://codex.wordpress.org/Function_Reference/wp_nav_menu
