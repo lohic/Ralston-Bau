@@ -21,32 +21,20 @@
         	<?php $nav = transplant_nav();?>
         	<span class="prev"><?php echo $nav->prev; ?></span> <span class="next"><?php echo $nav->next;  ?></span>
         </div>
-        <div id="page-<?php the_ID(); ?>" class="texte">
+        <div id="page-<?php the_ID(); ?>" class="texte contact">
             <div class="column container">
     
-
-                <!--<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>-->
-                     
-                <?php the_content(); ?>
-
-            
+			    <div class="half left">                 
+                	<?php the_content(); ?>
+				</div>
+                
+                <div class="half right">                 
+                <?php the_field('address'); ?>
+				</div>
+                
+            	<div class="reset"></div>
         	</div>
         </div>
-        <div class="description">
-            <div class="container">
-            	<?php if(get_field('facts')!=''){ ?>
-                <h2><?php the_field('facts_title');?></h2>
-                <ul>
-                <?php
-                    $tags = explode("\n",strip_tags(get_field('facts')));
-                    foreach($tags as $tag){
-                        echo "<li>$tag</li>";
-                    }
-                ?>
-                </ul>
-                <?php } ?>
-            </div>
-		</div>
     </div>
     
 	<?php endwhile; ?>

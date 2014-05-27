@@ -10,6 +10,17 @@ function project_category_taxonomy_custom_fields($tag) {
  
 <tr class="form-field">
     <th scope="row" valign="top">
+        <label for="project_category_image_url"><?php _e('Project Category Tags Title'); ?></label>
+    </th>
+    <td>
+        <!--<input type="text" name="term_meta[project_category_tags]" id="term_meta[project_category_tags]" size="25" style="width:60%;" value="<?php echo $term_meta['project_category_tags_title'] ? $term_meta['project_category_tags_title'] : ''; ?>"><br />-->
+        
+        <input  name="term_meta[project_category_tags_title]" id="project_category_tags_title" class="project_category_tags_title" size="25" style="width:97%;" value="<?php echo $term_meta['project_category_tags_title'] ? $term_meta['project_category_tags_title'] : ''; ?>" type="text" />
+        <p class="description"><?php _e('Project Category Tags Title'); ?></p>
+    </td>
+</tr>
+<tr class="form-field">
+    <th scope="row" valign="top">
         <label for="project_category_tags"><?php _e('Project Category Tags'); ?></label>
     </th>
     <td>
@@ -17,17 +28,6 @@ function project_category_taxonomy_custom_fields($tag) {
         
         <textarea  name="term_meta[project_category_tags]" id="project_category_tags" class="project_category_tags" size="25" style="width:97%;"><?php echo $term_meta['project_category_tags'] ? $term_meta['project_category_tags'] : ''; ?></textarea>
         <p class="description"><?php _e('Project Category tags, separate with comma'); ?></p>
-    </td>
-</tr>
-<tr class="form-field">
-    <th scope="row" valign="top">
-        <label for="project_category_image_url"><?php _e('Project Category Image URL'); ?></label>
-    </th>
-    <td>
-        <!--<input type="text" name="term_meta[project_category_tags]" id="term_meta[project_category_tags]" size="25" style="width:60%;" value="<?php echo $term_meta['project_category_tags'] ? $term_meta['project_category_tags'] : ''; ?>"><br />-->
-        
-        <input  name="term_meta[project_category_image_url]" id="project_category_image_url" class="project_category_image_url" size="25" style="width:97%;" value="<?php echo $term_meta['project_category_image_url'] ? $term_meta['project_category_image_url'] : ''; ?>" type="text" />
-        <p class="description"><?php _e('Project Category image URL, absolute URL don\'t forget http://'); ?></p>
     </td>
 </tr>
 
@@ -42,16 +42,17 @@ function project_category_add_taxonomy_custom_fields($tag) {
     $term_meta = get_option( "taxonomy_term_$t_id" ); // Do the check
 ?>
  
+
+<div class="form-field">
+        <label for="project_category_image_url"><?php _e('Project Category Tags Title'); ?></label>
+        <input type="text" name="term_meta[project_category_tags_title]" id="project_category_tags_title" size="25" style="width:60%;" value="<?php echo $term_meta['project_category_tags_title'] ? $term_meta['project_category_tags_title'] : ''; ?>"><br />
+        <p class="description"><?php _e('Project Category tags title'); ?></p>
+</div>
+
 <div class="form-field">
         <label for="project_category_tags"><?php _e('Project Category Tags'); ?></label>
         <input type="text" name="term_meta[project_category_tags]" id="term_meta[project_category_tags]" size="25" style="width:60%;" value="<?php echo $term_meta['project_category_tags'] ? $term_meta['project_category_tags'] : ''; ?>"><br />
         <p class="description"><?php _e('Project Category tags'); ?></p>
-</div>
-
-<div class="form-field">
-        <label for="project_category_image_url"><?php _e('Project Category Image URL'); ?></label>
-        <input type="text" name="term_meta[project_category_image_url]" id="project_category_image_url" size="25" style="width:60%;" value="<?php echo $term_meta['project_category_image_url'] ? $term_meta['project_category_image_url'] : ''; ?>"><br />
-        <p class="description"><?php _e('Image absolute URL, with http://'); ?></p>
 </div>
  
 <?php

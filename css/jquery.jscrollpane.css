@@ -21,7 +21,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 16px;
+	width: 5px;
 	height: 100%;
 	background: #F2F2F2;
 }
@@ -59,21 +59,27 @@
 	position: relative;
 }
 
+.texte .jspTrack {
+    background: #FFF;
+}
+
+.news .jspTrack {
+    background: #6E5D5B;
+}
+
 .jspDrag
 {
 	background: #6E5D5B;
-	opacity:0.1;
-	/*background:#FFF;
-	border:solid 1px #6E5D5B;
-	-website-box-sizing:border-box;
-	    -moz-box-sizing:border-box;
-	      -o-box-sizing:border-box;
-			 box-sizing:border-box;*/
+	opacity:0.3;
 	position: relative;
 	top: 0;
 	left: 0;
 	cursor: pointer;
 	/**/
+}
+.news .jspDrag {
+    background: #FFF;
+	opacity:0.4;
 }
 
 .jspHorizontalBar .jspTrack,
