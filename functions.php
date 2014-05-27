@@ -36,10 +36,6 @@ if ( ! function_exists( 'transplant_setup' ) ){
 			);
 		}
 		
-		if ( function_exists('register_sidebar') ) {
-			register_sidebar();
-		}
-		
 		if ( function_exists('my_register_post_types') )						add_action( 'init', 'my_register_post_types' );
 				
 		// Add the fields to the "presenters" taxonomy, using our callback function

@@ -5,27 +5,10 @@
 **********************************/
 var theTimer;
 
-
 /**************************
 ****** DOCUMENT PRET ******
 **************************/
 $(document).ready(function(){
-	//alert(document.location.href);
-
-	if(document.location.href != site_url+'/'){
-		
-		if( document.location.href.indexOf('/#/') == -1 ){
-			//alert('adresse ok ');
-			
-			var new_url = document.location.href.replace(site_url+'/',site_url+'/#/');
-			//document.location.href= new_url;
-			//alert(site_url +'/ '+new_url);
-			window.location = new_url;
-		}
-	}
-	
-	//$.address.hash('#!/');
-	//!document.location.href.contains('/#')){
 	
 	var theTimer;
 	
@@ -35,8 +18,6 @@ $(document).ready(function(){
 		
 	}else{
 		$.address.change(function(event) {
-			//alert($.address.queryString());
-			
 			$('#loading').css('opacity',1).css('display','block');
 			//clearScroll();
 			
@@ -123,7 +104,8 @@ $(window).load(function(){
 /**************************
 ***** INITIALISATION ******
 **************************/
-function init(param){	
+function init(param){
+	
 	// ACTIVATION DES LIENS AVEC JQUERY ADDRESS
 	$('a').click(function(){
 		if($(this).attr("target")!="_blank"){
@@ -166,13 +148,6 @@ function init(param){
 					var URL = $(this).find('a').attr('href').replace($.address.baseURL(), '');
 					$.address.value(URL);
 				}
-			});
-			
-			$(this).mouseenter(function(){
-				$(this).find('.black').animate({opacity:0},400);
-			});
-			$(this).mouseleave(function(){
-				$(this).find('.black').animate({opacity:0.3},400);
 			});
 		}
 	});
@@ -284,9 +259,9 @@ function init(param){
 	titrePage = $("h2.project-title").text();
 	
 	if(titrePage != ""){
-		document.title = "Ralston & Bau | Designers - Norway : "+titrePage;
+		document.title = "Transplant | Design - Norway : "+titrePage;
 	}else{
-		document.title = "Ralston & Bau | Designers - Norway";
+		document.title = "Transplant | Design - Norway";
 	}
 
 	// WEBCAM

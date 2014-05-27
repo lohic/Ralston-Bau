@@ -57,7 +57,6 @@
                 ?>
                 
                 <div class="box<?php the_sub_field('thumbnail_size'); ?> box" style="<?php echo $thebackdrop; ?>" >
-					<div class="black"></div>
         			<h2 style="<?php echo $theposition; ?>"><a href="<?php echo get_permalink($post_object->ID); ?>" title="<?php echo get_the_title($post_object->ID); ?>" style="color:<?php the_field('title_color',$post_object->ID); ?>!important;"><?php echo get_the_title($post_object->ID);?></a></h2>
             	</div>
 

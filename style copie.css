@@ -1,0 +1,348 @@
+/*
+Theme Name: Transplant theme
+Theme URI: http://www.transpplant.com/
+Description: Template for Transplant website.
+Version: 2.0
+Author: Loïc Horellou
+ 
+Creation Theme by Loïc Horellou || http://www.syclo.fr
+ 
+*/
+
+
+
+body{
+	background:#F5F5F5;
+	margin:0;
+	/*font-family:"Baskerville",Georgia, "Times New Roman", Times, serif;*/
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+a{
+	color:#000;
+	text-decoration:none;	
+}
+
+
+#top{
+	position:fixed;
+	height:20px;
+	left:0;
+	right:0;
+	top:0;
+	background:#111;
+}
+
+#top #socialwrapper{
+	margin:auto;
+	max-width:1200px;
+}
+
+#top #social{
+	margin:0 20px;
+	background:#222;
+	height:20px;
+}
+
+#main{
+	margin:0px auto 40px;
+	max-width:1200px;
+	position:relative;
+}
+
+#page{
+	margin:0 0px;
+	background:#FFF;
+}
+
+#header h1{
+	margin:20px;
+	font-weight:normal;
+	width:300px;
+	height:70px;
+	background:url(images/logo.png) no-repeat;
+	display:inline-block;
+}
+
+#header h1 a{
+	font-size:0;
+	letter-spacing:-5px;
+	position:absolute;
+	top:-5000px;
+}
+
+/*
+#
+# MENU
+#
+*/
+
+#menu{
+	width:33%;
+	float:left;
+	padding:700px 20px 0;
+	border-right:solid 1px #000;
+	list-style-type:none;
+}
+
+#menu ul.menu>li{
+	font-size:19px;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	margin-bottom:5px;
+}
+
+#menu ul.menu>li>a{
+	text-decoration:underline;
+}
+
+#menu ul.sub-menu{
+	font-size:16px;
+}
+
+#menu ul.menu ul.sub-menu{
+	text-decoration:none;
+}
+
+#menu h3{
+	font-size:19px;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	text-decoration:underline;
+	margin-bottom:5px;
+}
+
+#menu ul{
+	list-style:none;
+	margin:0 0 20px 0;
+	padding:0;
+}
+
+#menu ul li{
+	display:inline-block;
+	margin:0 10px 0 0;
+	padding:0;
+}
+
+#menu ul#projects_list li:before {
+	content: "\00BB \0020";
+}
+
+
+/*
+#
+# TEXTE
+#
+*/
+
+.text-container{
+	width:66%;
+	margin:0;
+	padding:700px 20px 20px;
+	float:right;
+}
+
+.navigation{
+}
+
+.navigation .next{
+	min-width:20px;
+	display:inline-block;
+	text-align:right;
+	height:20px;
+	background:#3FF;
+	float:right;
+}
+.navigation .prev{
+	min-width:200px;
+	display:inline-block;
+	text-align:left;
+	height:20px;
+	background:#F90;
+	float:left;
+}
+
+
+.texte{
+	margin-top:10px;
+	text-align:left;
+	-webkit-column-count:2;
+	   -moz-column-count:2;
+	     -o-column-count:2;
+		 	column-count:2;
+	-webkit-column-gap:40px;
+	   -moz-column-gap:40px;
+	   	 -o-column-gap:40px;
+		 	column-gap:40px;
+	-webkit-column-rule:dashed 1px #CCC;
+	   -moz-column-rule:dashed 1px #CCC;
+	     -o-column-rule:dashed 1px #CCC;
+		 	column-rule:dashed 1px #CCC;
+}
+
+
+
+.texte h2{
+		font-weight:normal;
+		margin:0;
+		margin-bottom:20px;
+		padding:0;
+		display:inline-block;
+		text-align:left;
+}
+
+.texte h2 a{
+	color:#000;
+}
+
+/*
+::selection{
+	background-color:#EEE;
+}
+*/
+
+.texte p{
+		margin:0;
+		margin-bottom:20px;
+}
+
+.texte p strong{
+}
+
+
+.texte p:first-letter{
+	margin-left:0;
+}
+
+.texte .link{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	border:solid #333 1px;
+	background:#333;
+	border-radius:11px;
+	margin-right:5px;
+}
+
+.texte .link:hover{
+	border:solid #CCC 1px;
+	background:#FFF;
+}
+
+.texte .extrait{
+	font-style:italic;
+	font-size:14px;
+}
+
+/*
+#
+# GALERIE PLAYER
+#
+*/
+
+#content{
+	overflow:hidden;
+	background:#222222;
+	height:700px;
+	position:absolute;
+	width:100%;
+}
+
+
+#player img{
+	max-width:100%;
+	height:auto;
+}
+
+#player .box{
+	margin:0;
+	padding:0;
+	background-size:cover;
+	background-position:center;
+	background-color:#FFF;
+	height:100px;
+	width:100px;
+}
+
+/*
+#
+# FOOTER
+#
+*/
+
+#footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	background:#C00;
+}
+
+#bottombar{
+	max-width:1200px;
+	margin:auto;
+	background:#333;
+	color:#FFF;
+	font-weight:normal;
+	-webkit-column-count:3;
+	   -moz-column-count:3;
+	     -o-column-count:3;
+		 	column-count:3;
+	-webkit-column-gap:40px;
+	   -moz-column-gap:40px;
+	   	 -o-column-gap:40px;
+		 	column-gap:40px;
+	-webkit-column-rule:solid 1px #CCC;
+	   -moz-column-rule:solid 1px #CCC;
+	     -o-column-rule:solid 1px #CCC;
+		 	column-rule:solid 1px #CCC;
+	padding:2px 0;
+}
+
+.column{
+	/*border-right:solid 1px #F00;*/
+	display:block;
+	float:left;
+	height:700px;
+	/*background:rgba(255,255,255,0.5);*/
+}
+
+#bottombar .sidebar ul>li{
+	/*-webkit-break-inside: avoid-column;
+	   -moz-break-inside: avoid-column;
+		 -o-break-inside: avoid-column;
+			break-inside: avoid-column;*/
+}
+#bottombar .sidebar>ul>li>h2{
+	/*-webkit-break-before:column;
+	   -moz-break-before:column;
+		 -o-break-before:column;
+			break-before:column;
+	-webkit-break-after:avoid-column;
+	   -moz-break-after:avoid-column;
+		 -o-break-after:avoid-column;
+			break-after:avoid-column;*/
+}
+
+.column:last-child{
+	border:0;
+}
+
+.reset{
+	clear:both;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+	
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	
+}
+
+@media screen and (max-width: 600px) {
+	
+}

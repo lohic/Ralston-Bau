@@ -19,7 +19,6 @@
             </li><?php } ?>
           	<li><?php get_search_form(); ?></li>
             <!--<li class="copyright">© 2012 - design by <a href="http://www.transplant.nu">Transplant</a> &amp; <a href="http://www.syclo.fr">Sÿclo</a></li>-->
-			<li><?php get_sidebar(); ?></li>
           </ul>
         </div>
     </div>

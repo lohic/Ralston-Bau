@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0">
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style-print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/jquery.jscrollpane.css" type="text/css" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -36,9 +35,6 @@
 <?php wp_head(); ?>
 </head>
 <body>
-<script>
-	site_url = "<?php bloginfo('url'); ?>";
-</script>
 
 <div id="loading"></div>
 
@@ -46,7 +42,7 @@
 	<div id="wrapper">
         <div id="menu">
             <div class="menu-container">
-                <h1  onClick="$.address.value('');deselectMenu();" style="cursor: pointer; " ><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+                <h1  onclick="$.address.value('');deselectMenu();" style="cursor: pointer; " ><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
                 <?php wp_nav_menu( array('menu' => 'Main Transplant menu' )); ?>
             </div>
         </div>

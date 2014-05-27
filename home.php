@@ -12,7 +12,7 @@
                     <?php 
                     
                     global $wp_query;
-                    $args = array_merge( $wp_query->query, array( 'post_type' => 'post', 'posts_per_page' => '3','cat'=>'-23'  ) );
+                    $args = array_merge( $wp_query->query, array( 'post_type' => 'post', 'posts_per_page' => '6','cat'=>'-23'  ) );
                     query_posts( $args );
                     
                     if(have_posts()) : ?>
@@ -83,7 +83,6 @@
                 ?>
                 
                 <div class="box<?php the_sub_field('thumbnail_size'); ?> box" style="<?php echo $thebackdrop; ?>" >
-					<div class="black"></div>
         			<h2 style="<?php echo $theposition; ?>"><a href="<?php echo get_permalink($post_object->ID); ?>" title="<?php echo get_the_title($post_object->ID); ?>" style="color:<?php the_field('title_color',$post_object->ID); ?>!important;"><?php echo get_the_title($post_object->ID);?></a></h2>
             	</div>
 
