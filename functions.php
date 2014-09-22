@@ -216,28 +216,28 @@ if( !function_exists('get_facebook')){
 
 $options = array (
 
-		array(	"desc" => __("<h3>Custom options</h3>"),
-				"type" => "nothing"),
+		array(	"desc"	=> __("<h3>Custom options</h3>"),
+				"type"	=> "nothing"),
 
-		array(	"name" => __('Homepage text'),
-				"desc" => __('The text that wil be shown on the home page'),
-				"id" => $shortname."_homepage_text",
-				"std" => "Transplant delivers effective design solutions and profiling for public interior spaces; from productive workspaces to hospitality and retail industries. The studio is dedicated to give each design a sense of meaning and personality. Integrating innovative materials into it's designs, Transplant is aiming for a sustainable design.",
-				"type" => "textarea",
+		array(	"name" 	=> __('Homepage text'),
+				"desc"	=> __('The text that wil be shown on the home page'),
+				"id"	=> $shortname."_homepage_text",
+				"std"	=> "Transplant delivers effective design solutions and profiling for public interior spaces; from productive workspaces to hospitality and retail industries. The studio is dedicated to give each design a sense of meaning and personality. Integrating innovative materials into it's designs, Transplant is aiming for a sustainable design.",
+				"type"	=> "textarea",
 				"options" => array(	"rows" => "5",
 									"cols" => "94") ),
 									
-		array(	"name" => __('Twitter address'),
-				"desc" => __('Tranplant twitter account URL'),
-				"id" => $shortname."_twitter_URL",
-				"std" => '',
-				"type" => "text"),
+		array(	"name"	=> __('Twitter address'),
+				"desc"	=> __('Tranplant twitter account URL'),
+				"id"	=> $shortname."_twitter_URL",
+				"std"	=> '',
+				"type"	=> "text"),
 				
-		array(	"name" => __('Facebook address'),
-				"desc" => __('Tranplant facebook account URL'),
-				"id" => $shortname."_facebook_URL",
-				"std" => '',
-				"type" => "text")									
+		array(	"name"	=> __('Facebook address'),
+				"desc"	=> __('Tranplant facebook account URL'),
+				"id"	=> $shortname."_facebook_URL",
+				"std"	=> '',
+				"type"	=> "text")									
 );
 
 
@@ -277,7 +277,8 @@ function transplant_nav(){
 			//break;
 		}
 	}
-		
+	
+	$retour = new stdClass();
 	
 	if($idnext  != -1){
 		$link = get_permalink($idnext);

@@ -47,7 +47,7 @@
         <div id="menu">
             <div class="menu-container">
                 <h1  onClick="$.address.value('');deselectMenu();" style="cursor: pointer; " ><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-                <?php wp_nav_menu( array('menu' => 'Main Transplant menu' )); ?>
+                <?php wp_nav_menu( array('theme_location' => 'main_menu' )); ?>
             </div>
         </div>
         

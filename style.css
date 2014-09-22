@@ -8,6 +8,12 @@ Author: Loïc Horellou
 Creation Theme by Loïc Horellou || http://www.loichorellou.net
 */
 
+/*	
+
+http://www.pompage.net/traduction/impression
+
+*/
+
 *{
 	outline-width:0;
 }
@@ -567,21 +573,29 @@ p.submit{
 	margin-top:2px;
 }
 
-#searchform input{
+#footer input{
 	background:none;
 	outline-width:0;
 }
 
-#searchform input[type=text]{
+#footer input[type=text]{
 	border-radius:2px;
 	border: solid 1px #6E5D5B;
 	color:#6E5D5B;
 }
-#searchform input[type=submit]{
+#footer input[type=submit]{
 	border-radius:2px;
 	border: solid 1px #6E5D5B;
 	background:rgba(110, 93, 91, 0.8);
 	color:#FFF;
+}
+
+.widget_wysija_cont .wysija-submit{
+	display: inline-block !important;
+	margin-top: 0px !important;
+}
+form.html_wysija{
+	margin-top: 4px;
 }
 
 /****************
