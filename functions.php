@@ -40,19 +40,52 @@ if ( ! function_exists( 'transplant_setup' ) ){
 			register_sidebar();
 		}
 		
-		if ( function_exists('my_register_post_types') )						add_action( 'init', 'my_register_post_types' );
+		if ( function_exists('my_register_post_types') )	add_action( 'init', 'my_register_post_types' );
 				
 		// Add the fields to the "presenters" taxonomy, using our callback function
 		//require( get_template_directory() . '/functions-project-category-meta.php' );
 		
-		if ( function_exists('my_register_taxonomies') )						add_action( 'init', 'my_register_taxonomies' );
+		if ( function_exists('my_register_taxonomies') )	add_action( 'init', 'my_register_taxonomies' );
 		//if ( function_exists('project_category_add_taxonomy_custom_fields') )	add_action( 'project_category_add_form_fields', 'project_category_add_taxonomy_custom_fields', 10, 2 );
 		//if ( function_exists('project_category_taxonomy_custom_fields') )		add_action( 'project_category_edit_form_fields', 'project_category_taxonomy_custom_fields', 10, 2 );
 				 
 		// Save the changes made on the "presenters" taxonomy, using our callback function
 		//add_action( 'edited_project_category', 'save_taxonomy_custom_fields', 10, 2 );
 		
+		if ( function_exists('my_scripts_method') )			add_action( 'wp_enqueue_scripts', 'my_scripts_method' ); 
 	}
+}
+
+
+/**
+ * wp_enqueue_scripts action hook to link only on the front-end
+ * @return [type] [description]
+ */
+function my_scripts_method() {
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery-ui-core' );
+	/*wp_enqueue_script( 'jquery-ui',     get_template_directory_uri() . '/js/jquery-ui-1.8.20.custom.min.js',
+		array('jquery'), '1.8.20', true );*/
+	wp_enqueue_script( 'migrate',		get_template_directory_uri() . '/js/jquery-migrate-1.2.1.min.js',
+		array('jquery'), '1.2.1', true);
+	wp_enqueue_script( 'address',     	get_template_directory_uri() . '/js/jquery.address-1.4.min.js',
+		array('jquery','migrate'), '1.4', true );
+	wp_enqueue_script( 'resizend',     	get_template_directory_uri() . '/js/jquery.resizend.js',
+		array('jquery'), '1', true );
+	wp_enqueue_script( 'isotope',     	get_template_directory_uri() . '/js/jquery.isotope.min.js',
+		array('jquery','migrate'), '1.5.11', true );
+	wp_enqueue_script( 'mousewheel',    get_template_directory_uri() . '/js/jquery.mousewheel.js',
+		array('jquery'), '3.0.6', true );
+	wp_enqueue_script( 'jscrollpane',   get_template_directory_uri() . '/js/jquery.jscrollpane.min.js',
+		array('jquery','mousewheel'), '2.0.0', true );
+	wp_enqueue_script( 'slides',     	get_template_directory_uri() . '/js/slides.min.jquery.js',
+		array('jquery'), '1.1.9', true );
+	wp_enqueue_script( 'scrollsync',    get_template_directory_uri() . '/js/scrollsync.js',
+		array('jquery'), '1.0', true );
+	wp_enqueue_script( 'dragscrollable',get_template_directory_uri() . '/js/dragscrollable.js',
+		array('jquery'), '1.0', true );
+	wp_enqueue_script( 'ralstonbau',    get_template_directory_uri() . '/js/script.js',
+		array('jquery', 'migrate', 'jquery-ui-core','address','resizend','isotope','jscrollpane','slides','scrollsync','dragscrollable'),'1.0.0', true );
 }
 
 
