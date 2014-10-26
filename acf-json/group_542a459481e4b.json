@@ -1,0 +1,154 @@
+{
+    "key": "group_542a459481e4b",
+    "title": "Project settings",
+    "fields": [
+        {
+            "key": "field_543f67430e976",
+            "label": "Thumbnail parameters",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_4f69044382b1a",
+            "label": "Title color",
+            "name": "title_color",
+            "prefix": "",
+            "type": "select",
+            "instructions": "The color of the title when we are in category view.",
+            "required": 1,
+            "conditional_logic": 0,
+            "choices": {
+                "#000000": "Black",
+                "#6E5D5B": "Brown",
+                "#FFFFFF": "White"
+            },
+            "default_value": {
+                "#000000": "#000000"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_4f69b221b5ea5",
+            "label": "Title position",
+            "name": "title_position",
+            "prefix": "",
+            "type": "select",
+            "instructions": "The position of the title in the box.",
+            "required": 1,
+            "conditional_logic": 0,
+            "choices": {
+                "TL": "top left",
+                "BR": "bottom right"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_4f69046207648",
+            "label": "Taille des miniatures",
+            "name": "thumbnail_size",
+            "prefix": "",
+            "type": "select",
+            "instructions": "The size in grid unit of the project thumbnail.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "1x1": "1x1",
+                "1x2": "1x2",
+                "2x2": "2x2",
+                "2x3": "2x3"
+            },
+            "default_value": {
+                "1x1": "1x1"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_543f67270e975",
+            "label": "Client Informations",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_4fa252fb413d5",
+            "label": "Client name",
+            "name": "client_name",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_4f8671053f7ac",
+            "label": "Mission",
+            "name": "mission",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "readonly": 0,
+            "disabled": 0,
+            "rows": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "custom_fields",
+        "discussion",
+        "comments",
+        "author"
+    ]
+}

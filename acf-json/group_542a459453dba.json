@@ -1,0 +1,35 @@
+{
+    "key": "group_542a459453dba",
+    "title": "Contact Page",
+    "fields": [
+        {
+            "key": "field_4fa1c95b94835",
+            "label": "Adresse",
+            "name": "address",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "toolbar": "full",
+            "media_upload": 0,
+            "tabs": "all",
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

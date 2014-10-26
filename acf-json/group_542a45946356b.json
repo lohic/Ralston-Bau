@@ -1,0 +1,56 @@
+{
+    "key": "group_542a45946356b",
+    "title": "Page settings",
+    "fields": [
+        {
+            "key": "field_4fbd56aa9a3ed",
+            "label": "Facts title",
+            "name": "facts_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "formatting": "html",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_4fbd56aaa7816",
+            "label": "Facts",
+            "name": "facts",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": "",
+            "readonly": 0,
+            "disabled": 0,
+            "rows": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

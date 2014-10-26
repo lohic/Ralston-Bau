@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<!-- DEBUT page-contact.php -->
     
 	<?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
@@ -41,5 +42,5 @@
 	<?php endif; ?>
     
 
-
+<!-- FIN page-contact.php -->
 <?php get_footer(); ?>

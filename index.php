@@ -1,57 +1,52 @@
 <?php get_header(); ?>
+<!-- DEBUT index.php -->
 
-
- <?php //get_homepage_text();?>
- 
-	<?php //wp_reset_query();
-	//global $query_string;
-	//query_posts($query_string.'posts_per_page=1'); ?>
+	
     
-	<?php if(have_posts()) : ?>
+
+    <div id="contenu">
+        <div id="category-info" class="scroll">
+            <div class="container">
+                <h3><?php get_homepage_text();?></h3>
+            </div>
+        </div>
+    </div>
+
+
+    <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
-    
 
-    <div id="player">
-        <!-- GALERIE -->
-        <?php attachment_toolbox(); ?>
-    </div>
-    <div id="content">
-        <div class="nav">
-        	<div class="prev"><?php previous_post_link('%link', 'Previous', TRUE) ?></div><div class="next"><?php next_post_link('%link', 'Next', TRUE) ?></div>
-            <?php //posts_nav_link(' - ','page suivante','page pr&eacute;c&eacute;dente'); ?>
-        </div>
-        <div class="description">
-            <h2>Expertise</h2>
-            <ul>
-                <li>Scenography</li>
-                <li>Interior Architecture</li>
-                <li> Furniture Design</li>
-                <li>Product Design</li>
-                <li>Coopertae Identity</li>
-                <li>Packaging Design</li>
-                <li>Outside Design</li>
-            </ul>
-        </div>
-        <div id="post-<?php the_ID(); ?>" class="texte">
-            <div class="column">
-    
+    <div id="post_container">
+        <div id="post">
+        	<div class="content">
+        		<div class="container">
+    				<div class="close"><a href="<?php bloginfo('url'); ?>">Close</a></div>
 
-                <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                <?php //the_excerpt(); ?>
-    
-            
-                <?php the_content(); ?>
-
-            
-        	</div>
+    		        <h2><?php the_title(); ?></h2>    
+    		    
+    		        <?php the_content(); ?>
+    	        </div>
+    	    </div>
         </div>
     </div>
-    
-	<?php endwhile; ?>
+
+   	<?php endwhile; ?>
 	<?php endif; ?>
     
-    <div class="reset"></div>
-</div>
 
 
-<?php get_footer(); ?>
+    <div id="galerie">
+        <?php
+
+        $idObj = get_term_by('slug', 'home', 'project_category');
+        $current_cat_id = $idObj->term_id;
+
+        ?>
+        <?php get_template_part('inc/wall'); ?>
+    </div>
+
+	
+ 
+
+<!-- FIN index.php -->
+ <?php get_footer(); ?>

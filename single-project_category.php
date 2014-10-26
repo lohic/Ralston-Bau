@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    
+<!-- DEBUT single-project-category.php -->
     
 	<?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
@@ -29,5 +29,7 @@
     
 	<?php endwhile; ?>
 	<?php endif; ?>
-    
+
+
+<!-- FIN single-project-category.php -->
 <?php get_footer(); ?>

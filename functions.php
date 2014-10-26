@@ -6,7 +6,9 @@ $shortname = "tp";
 
 add_action( 'after_setup_theme', 'transplant_setup' );
 
-
+/**
+ * 
+ */
 if ( ! function_exists( 'transplant_setup' ) ){
 
 	function transplant_setup() {
@@ -64,33 +66,47 @@ if ( ! function_exists( 'transplant_setup' ) ){
 function my_scripts_method() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-ui-core' );
+    wp_enqueue_script( 'modernizr',		get_template_directory_uri() . '/js/modernizr.js',
+		array(), '2.8.3', false);
 	/*wp_enqueue_script( 'jquery-ui',     get_template_directory_uri() . '/js/jquery-ui-1.8.20.custom.min.js',
 		array('jquery'), '1.8.20', true );*/
 	wp_enqueue_script( 'migrate',		get_template_directory_uri() . '/js/jquery-migrate-1.2.1.min.js',
 		array('jquery'), '1.2.1', true);
-	wp_enqueue_script( 'address',     	get_template_directory_uri() . '/js/jquery.address-1.4.min.js',
-		array('jquery','migrate'), '1.4', true );
+	/*wp_enqueue_script( 'getdompath',		get_template_directory_uri() . '/js/jquery.dom.path.js',
+		array('jquery'), '1.0', true);*/
+	/*wp_enqueue_script( 'address',     	get_template_directory_uri() . '/js/jquery.address-1.4.min.js',
+		array('jquery','migrate'), '1.4', true );*/
 	wp_enqueue_script( 'resizend',     	get_template_directory_uri() . '/js/jquery.resizend.js',
 		array('jquery'), '1', true );
-	wp_enqueue_script( 'isotope',     	get_template_directory_uri() . '/js/jquery.isotope.min.js',
-		array('jquery','migrate'), '1.5.11', true );
+	wp_enqueue_script( 'freewall',     	get_template_directory_uri() . '/js/freewall.js',
+		array('jquery'), '1.0.4', true );
+	wp_enqueue_script( 'fitvids',     	get_template_directory_uri() . '/js/jquery.fitvids.js',
+		array('jquery'), '1.1', true );
+	wp_enqueue_script( 'history',		get_template_directory_uri() . '/js/jquery.history.js',
+		array('jquery'), '1', true );
 	wp_enqueue_script( 'mousewheel',    get_template_directory_uri() . '/js/jquery.mousewheel.js',
-		array('jquery'), '3.0.6', true );
+		array('jquery'), '3.1.9', true );
+	wp_enqueue_script( 'mwheelIntent',    get_template_directory_uri() . '/js/mwheelIntent.js',
+		array('mousewheel'), '1.2', true );
 	wp_enqueue_script( 'jscrollpane',   get_template_directory_uri() . '/js/jquery.jscrollpane.min.js',
-		array('jquery','mousewheel'), '2.0.0', true );
-	wp_enqueue_script( 'slides',     	get_template_directory_uri() . '/js/slides.min.jquery.js',
-		array('jquery'), '1.1.9', true );
-	wp_enqueue_script( 'scrollsync',    get_template_directory_uri() . '/js/scrollsync.js',
-		array('jquery'), '1.0', true );
-	wp_enqueue_script( 'dragscrollable',get_template_directory_uri() . '/js/dragscrollable.js',
-		array('jquery'), '1.0', true );
+		array('jquery','mousewheel','mwheelIntent'), '2.0.19', true );
+	/*wp_enqueue_script( 'slides',     	get_template_directory_uri() . '/js/slides.min.jquery.js',
+		array('jquery'), '1.1.9', true );*/
+	wp_enqueue_script( 'bxslider',     	get_template_directory_uri() . '/js/bxslider/jquery.bxslider.min.js',
+		array('jquery'), '4.1.2', true );
+	/*wp_enqueue_script( 'scrollsync',    get_template_directory_uri() . '/js/scrollsync.js',
+		array('jquery'), '1.0', true );*/
+	/*wp_enqueue_script( 'dragscrollable',get_template_directory_uri() . '/js/dragscrollable.js',
+		array('jquery'), '1.0', true );*/
 	wp_enqueue_script( 'ralstonbau',    get_template_directory_uri() . '/js/script.js',
-		array('jquery', 'migrate', 'jquery-ui-core','address','resizend','isotope','jscrollpane','slides','scrollsync','dragscrollable'),'1.0.0', true );
+		array('jquery', 'modernizr', 'migrate', 'jquery-ui-core','resizend','freewall','history','jscrollpane','bxslider'),'1.1.0', true );
 }
 
 
 
-// create a gallery
+/**
+ * CREATE A GALLERY
+ */
 if ( ! function_exists( 'attachment_toolbox' ) ){
 	function attachment_toolbox($size = Hgallery) {
 	
@@ -104,7 +120,7 @@ if ( ! function_exists( 'attachment_toolbox' ) ){
 			'order'			 => 'ASC',
 		))) {
 	
-			echo '<ul class="mosaic overview">'."\n";
+			//echo '<ul class="mosaic overview">'."\n";
 			$postcounter = 0;
 	
 	
@@ -146,27 +162,37 @@ if ( ! function_exists( 'attachment_toolbox' ) ){
 				$attcontent = ($image->post_content);
 	
 				if($alt != 'hide' && $alt != 'webcam'){
-					echo '<li class="mosaic-item gallery-img">'."\n".'<div class="mosaic-img" '.$video_id.' '.$video_platform.'>'."\n".$attimg."\n".'</div>'."\n";
-					echo '<p class="mosaic-title">'.$atttitle.'</p>'."\n";
-					echo '<p class="mosaic-content">'.$attcontent.'</p></li>'."\n";
-					$postcounter++;
+
+					echo "<div class='image'>
+						$attimg
+					</div>";
+
+					//echo '<li class="mosaic-item gallery-img">'."\n".'<div class="mosaic-img" '.$video_id.' '.$video_platform.'>'."\n".$attimg."\n".'</div>'."\n";
+					//echo '<p class="mosaic-title">'.$atttitle.'</p>'."\n";
+					//echo '<p class="mosaic-content">'.$attcontent.'</p></li>'."\n";
 					
 				}else if($alt=='webcam'){
+
+					echo "<div class='image'>
+						$attimg
+					</div>";
 			
-					echo '<li class="mosaic-item gallery-img">'."\n".'<div class="mosaic-img webcam">'.$attimg."\n".'<div>'."\n";
-					echo '<p class="mosaic-title">'.$atttitle.'</p>'."\n";
-					echo '<p class="mosaic-content">'.$attcontent.'</p></li>'."\n";
+					//echo '<li class="mosaic-item gallery-img">'."\n".'<div class="mosaic-img webcam">'.$attimg."\n".'<div>'."\n";
+					//echo '<p class="mosaic-title">'.$atttitle.'</p>'."\n";
+					//echo '<p class="mosaic-content">'.$attcontent.'</p></li>'."\n";
 					
-					$postcounter++;
 				}
+				$postcounter++;
 			}
 	
-			echo '</ul>'."\n";
+			//echo '</ul>'."\n";
 		}
 	}
 }
 
-
+/**
+ * 
+ */
 if( ! function_exists (my_register_post_types)) {
 	function my_register_post_types() {
 		register_post_type(
@@ -190,7 +216,9 @@ if( ! function_exists (my_register_post_types)) {
 	}
 }
 
-
+/**
+ * 
+ */
 if( ! function_exists (my_register_taxonomies)) {
 	function my_register_taxonomies() {
 	
@@ -217,6 +245,9 @@ if( ! function_exists (my_register_taxonomies)) {
 
 // Create theme options
 
+/**
+ * 
+ */
 if( !function_exists('get_homepage_text')){
 	function get_homepage_text(){
 		global $themename, $shortname, $options;
@@ -226,6 +257,9 @@ if( !function_exists('get_homepage_text')){
 	};
 };
 
+/**
+ * 
+ */
 if( !function_exists('get_twitter')){
 	function get_twitter(){
 		global $themename, $shortname, $options;
@@ -235,7 +269,9 @@ if( !function_exists('get_twitter')){
 	};
 };
 
-
+/**
+ * 
+ */
 if( !function_exists('get_facebook')){
 	function get_facebook(){
 		global $themename, $shortname, $options;
@@ -275,26 +311,39 @@ $options = array (
 
 
 		
-/*$args = array(
-   'orderby' => 'menu_order',
-   'order' => 'ASC',
-);*/
-//, $args
-			
+
+/**
+ * [transplant_nav description]
+ * @return [type] [description]
+ */
 function transplant_nav(){
 	$postID = get_the_ID();
 	
 	$terms = get_the_terms( $postID, 'project_category' );
+
 	$liste = array();
 	if($terms){
 		foreach ( $terms as $term ) {
 			$project_category_id = $term->term_id;
+
+			if( have_rows('projects_movie','project_category_'.$project_category_id) ):
 	
-			$listeB = get_objects_in_term_new( $project_category_id, 'project_category');
-			$liste = array_merge($liste, $listeB);
+				while ( have_rows('projects_movie','project_category_'.$project_category_id) ) : the_row(); 
+
+					if( get_row_layout() == 'project' ):  $post_object = get_sub_field('the_project');
+
+						$liste[] = $post_object->ID;
+					
+					elseif( get_row_layout() == 'movie' ):  
+							// rien
+					endif; 
+				endwhile; 
+			endif;
+	
+			//$listeB = get_objects_in_term_new( $project_category_id, 'project_category');
+			//$liste  = array_merge($liste, $listeB);
 		}
 	}
-	//var_dump($liste);
 	
 	$nbr	= count($liste);
 	$idnext = -1;
@@ -316,23 +365,30 @@ function transplant_nav(){
 	if($idnext  != -1){
 		$link = get_permalink($idnext);
 	
-		$retour->next =  "<a href='$link'>next</a>";
+		$retour->next =  "<a href='$link'>Next ></a>";
 	}else{
-		$retour->next = '';
+		$retour->next = false;
 	}
 
 	if($idprev  != -1){
 		$link = get_permalink($idprev);
 	
-		$retour->prev = "<a href='$link'>previous</a>";
+		$retour->prev = "<a href='$link'>< Prev</a>";
 	}else{
-		$retour->prev = '';
+		$retour->prev = false;
 	}
 	
 	return $retour;
 }
 
 
+/**
+ * [get_objects_in_term_new description]
+ * @param  [type] $term_ids   [description]
+ * @param  [type] $taxonomies [description]
+ * @param  array  $args       [description]
+ * @return [type]             [description]
+ */
 function get_objects_in_term_new( $term_ids, $taxonomies, $args = array() ) {
 		global $wpdb;
 

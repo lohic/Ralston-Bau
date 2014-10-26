@@ -1,0 +1,64 @@
+{
+    "key": "group_542a45945aa35",
+    "title": "Media",
+    "fields": [
+        {
+            "key": "field_4fa0a1a3d3aec",
+            "label": "Vimeo ID",
+            "name": "vimeo_id",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "formatting": "none",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_4fc8e5f7a0c71",
+            "label": "Video Type",
+            "name": "video_type",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "vimeo": "Vimeo",
+                "youtube": "Youtube",
+                "dailymotion": "Dailymotion"
+            },
+            "default_value": {
+                "vimeo": "vimeo"
+            },
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

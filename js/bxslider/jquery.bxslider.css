@@ -1,0 +1,199 @@
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+	position: relative;
+	margin: 0 auto 0px;
+	padding: 0;
+	*zoom: 1;
+}
+
+.bx-wrapper img {
+	max-width: 100%;
+    display: inline;
+}
+
+/** THEME
+===================================*/
+
+.bx-wrapper .bx-viewport {
+	/*border: solid #fff 3px;*/
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+}
+
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url(images/bx_loader.gif) center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+	font-family:PxGrotesk-Regular;
+	font-size:14px;
+	text-align: right;
+	padding-top: 0px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background: ;
+	text-indent: -9999px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	outline: 0;
+}
+
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .inline {display:inline;}
+.bx-wrapper .bx-prev {
+	left:0px;
+	top:0px;
+	width:50%;
+	height:100%;
+	background:transparent;
+}
+
+
+.bx-wrapper div.bx-prevo {
+	width:24px !important;left:30px;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAMAAACETmeaAAAAA3NCSVQICAjb4U/gAAAAXVBMVEVGRUXx8PC1tLR1dHTY2NhaWFiRkJD///+OjY1sa2uLiYng4OBRT0/Av79mZmb19fXq6ur///9jYmJOTEyZmZm8u7ve3d2WlZVwb29TUVG4t7fz8/Pb2tpSUFDCwcHrzhqlAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADIvMDUvMTM5PKOqAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAEFJREFUCJkdyEcOgDAQxdBPNT2IHkDc/5hkxpsnWVhZK6NcTzPXSLKLPWheipCevspAoYmHCbd2l3eoXZ5rcmH7AX4dAw/fYE0vAAAAAElFTkSuQmCC);
+	background-repeat:no-repeat;
+	background-position:0px 0px;
+
+
+}
+
+.bx-wrapper div.bx-nexto {
+	width:20px;left: 98px;text-align:center;
+	 background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAMAAACETmeaAAAAA3NCSVQICAjb4U/gAAAAVFBMVEU3NTXx8PC0s7OBgIBqaGjZ2dlOTEz///+WlZVGRESJiIi+vb3g4OC9vLySkZFQTk5VVFSGhYXz8/OZmZlubW3k5OTBwMDb29tsa2v19fW/v7+XlZVJVjnmAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADIvMDUvMTM5PKOqAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAEJJREFUCJkdzEkSgCAQA8BBgbC5K6D/f6hMculDUpEjQCNv70YFgncUX5woyp4omtAlZnXd2uiNvc+xf/zFn7ly+QN+ZwLb0qVVDAAAAABJRU5ErkJggg==);
+	 background-repeat: no-repeat;
+	 background-position: 0px 0px;
+}
+
+a.bx-nexto {width: 100%;}
+
+.bx-wrapper div.bx-prevo , .bx-wrapper div.bx-nexto {
+	font-size:1.2em;
+	display:block;
+	height:0px;
+	bottom:0px;
+}
+.bx-wrapper a.bx-prevo:hover , .bx-wrapper div.bx-prevo:hover {
+	cursor:w-resize;
+}
+
+.bx-wrapper a.bx-nexto:hover , .bx-wrapper div.bx-nexto:hover {
+	cursor:e-resize;
+}
+
+
+.bx-wrapper .bx-next {
+	right: 0;
+	background: transparent;
+
+}
+
+.bx-wrapper .bx-prev:hover {
+	background-position: 0 0;
+	cursor:w-resize;
+}
+
+.bx-wrapper .bx-next:hover {
+	cursor:e-resize;
+	background-position: 0px 0;
+}
+
+.bx-wrapper .bx-controls-direction a {
+	position: absolute;
+	top: 0px;
+	margin: 0;
+	outline: 0;
+	width: 30%;
+	height: 100%;
+	text-indent: -9999px;
+	z-index: 9999;
+}
+
+.bx-wrapper div.bx-nexto a {
+	font-size:1.2em;
+	display:block;
+	height:100%;
+	width:100%;
+	left:0;
+	position: absolute;
+	bottom: 0px;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+	text-align: left;
+	width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666\9;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}

@@ -1,3 +1,4 @@
+<!-- DEBUT comments.php -->
 <?php // Do not delete these lines
 if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) die ('Ne pas t&eacute;l&eacute;charger cette page directement, merci !');
 if (!empty($post->post_password)) { // if there's a password
@@ -101,3 +102,4 @@ $oddcomment = 'alt';
 <?php endif; // If registration required and not logged in ?>
 
 <?php endif; // if you delete this the sky will fall on your head ?>
+<!-- FIN comments.php -->
