@@ -99,7 +99,7 @@ function my_scripts_method() {
 	/*wp_enqueue_script( 'dragscrollable',get_template_directory_uri() . '/js/dragscrollable.js',
 		array('jquery'), '1.0', true );*/
 	wp_enqueue_script( 'ralstonbau',    get_template_directory_uri() . '/js/script.js',
-		array('jquery', 'modernizr', 'migrate', 'jquery-ui-core','resizend','freewall','history','jscrollpane','bxslider'),'1.1.0', true );
+		array('jquery', 'modernizr', 'migrate', 'jquery-ui-core','resizend','freewall','history','jscrollpane','bxslider'),'1.1.1', true );
 }
 
 

@@ -11,17 +11,19 @@
                 <?php the_content(); ?>
             </div>
         </div>
+
+        <?php $nav = transplant_nav();?>
+        <?php if( $nav->prev !== false || $nav->next !== false || get_field('mission')!='' || get_field('client_name')!='' ) : ?>
         <div id="project-nav" class="nav">
             <div class="container">
-            	<?php $nav = transplant_nav();?>
         		
                 <?php if($nav->prev !== false || $nav->next !== false) : ?>
                 <div id="navbuttons" class="clearfix">
                     <?php if($nav->prev !== false){ ?>
-                    <button id="prev"><?php echo $nav->prev; ?></button>
+                    <span id="prev" class="button"><?php echo $nav->prev; ?></span>
                     <?php } ?>
                     <?php if($nav->next !== false){ ?>
-                    <button id="next"><?php echo $nav->next; ?></button>
+                    <span id="next" class="button"><?php echo $nav->next; ?></span>
                     <?php } ?>
                 </div>
                 <?php endif; ?>
@@ -39,6 +41,7 @@
                 <?php } ?>
             </div>
         </div>
+        <?php endif; ?>
     </div>
  
     <div id="post_container"></div>

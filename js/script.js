@@ -182,7 +182,6 @@ $(function(){
 
 	function updateContent(){
 
-
        /**
         * MUTE VIMEO PLAYER
         */
@@ -209,6 +208,52 @@ $(function(){
 				}); 
 			});
 		}
+
+		/*$('#galerie #horizontal img').load(function(){
+			if($('#galerie').length > 0){ 		$('#galerie').jScrollPane().data().jsp.destroy(); }
+
+			$("#galerie #horizontal .image").height( $(window).height() - hauteur - 10 );
+
+            $('#galerie').bind(
+				'jsp-initialised',
+				function(event, isScrollable)
+				{
+					// POUR FAIRE LE DRAG SCROLL
+					//http://jsfiddle.net/PWYpu/28/
+					//var leftScroll = $('#mosaic-wrapper').offset().left;
+					//var endScroll = leftScroll + $('#mosaic-wrapper').width();
+					//var f = ($('#mosaic-wrapper').width() / $('#mosaic-wrapper .jspPane').width())*5;
+					var startX;
+					var startXX;
+					var initX;
+					var delta = 0;
+					var selection = false ;
+
+					$(document).mousemove(function(e){
+						var mX;
+						var delta = startX - e.pageX;
+
+						if(selection){
+							//$('#mosaic-wrapper').data('jsp').scrollToX(e.pageX-delta);
+							$('#galerie').data('jsp').scrollToX(initX+delta);
+						}
+						//window.status = e.pageX+' '+leftScroll+' '+ endScroll+' '+mX +' '+delta;
+						window.status = delta;
+					})   
+					    
+					$('#galerie').mousedown(function(e){
+						initX = $('#galerie').data('jsp').getContentPositionX();
+						startX = e.pageX;
+						startXX = $('#galerie .jspPane').offset().left;
+						selection = true ;
+						e.preventDefault();
+					})
+					$(window).mouseup(function(){
+						selection = false ;
+					})
+				}
+			).jScrollPane();
+		})*/
 
 
 		/**
@@ -289,6 +334,12 @@ $(function(){
 
 	            if(stageW >=  700){
 
+	            	if($('#galerie').length > 0){ 		$('#galerie').jScrollPane().data().jsp.destroy(); }
+	                if($('#project-info').length > 0){	$('#project-info').jScrollPane().data().jsp.destroy(); }
+	                if($('#project-nav').length > 0){	$('#project-nav').jScrollPane().data().jsp.destroy(); }
+	                if($('#category-info').length > 0){ $('#category-info').jScrollPane().data().jsp.destroy(); }
+	                if($('#post>.content').length > 0){ $('#post>.content').jScrollPane().data().jsp.destroy(); }
+
 	                hauteur = 255 + 40 + 20;
 	                /*if(stageW >=  1600){
 	                    hauteur = 10 + 40;
@@ -337,6 +388,13 @@ $(function(){
 							})
 						}
 					).jScrollPane();
+	
+					if($('#contenu #project-nav').length > 0){ 
+						
+						$('#contenu #project-info').css('width','calc(100% - 170px)');
+
+					}
+
 	                $('#project-info').jScrollPane();
 	                $('#project-nav').jScrollPane();
 	                $('#category-info').jScrollPane();
@@ -346,6 +404,7 @@ $(function(){
 	                $('.bxslider').bxSlider({
 						speed: 150,
 						mode: 'horizontal',
+						infiniteLoop: false,
 						pager: false,
 						pagerType: 'short',
 						pagerLocation: 'bottom',
