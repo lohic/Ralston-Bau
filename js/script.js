@@ -419,6 +419,9 @@ $(function(){
 	            }else{
 
 	                $("#galerie #horizontal .image").height( 'auto' );
+
+					$('#contenu #project-info').css('width','auto');
+					
 	                
 	                //wall.fitWidth();
 	                //wall.refresh();
