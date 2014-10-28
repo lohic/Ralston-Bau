@@ -90,6 +90,8 @@ function my_scripts_method() {
 		array('mousewheel'), '1.2', true );
 	wp_enqueue_script( 'jscrollpane',   get_template_directory_uri() . '/js/jquery.jscrollpane.min.js',
 		array('jquery','mousewheel','mwheelIntent'), '2.0.19', true );
+	wp_enqueue_script( 'imagesloaded',   get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
+		array('jquery'), '3.1.8', true );
 	/*wp_enqueue_script( 'slides',     	get_template_directory_uri() . '/js/slides.min.jquery.js',
 		array('jquery'), '1.1.9', true );*/
 	wp_enqueue_script( 'bxslider',     	get_template_directory_uri() . '/js/bxslider/jquery.bxslider.min.js',
@@ -99,7 +101,7 @@ function my_scripts_method() {
 	/*wp_enqueue_script( 'dragscrollable',get_template_directory_uri() . '/js/dragscrollable.js',
 		array('jquery'), '1.0', true );*/
 	wp_enqueue_script( 'ralstonbau',    get_template_directory_uri() . '/js/script.js',
-		array('jquery', 'modernizr', 'migrate', 'jquery-ui-core','resizend','freewall','history','jscrollpane','bxslider'),'1.1.1', true );
+		array('jquery', 'modernizr', 'migrate', 'jquery-ui-core','resizend','freewall','history','jscrollpane','bxslider', 'imagesloaded'),'1.1.2', true );
 }
 
 
@@ -365,7 +367,7 @@ function transplant_nav(){
 	if($idnext  != -1){
 		$link = get_permalink($idnext);
 	
-		$retour->next =  "<a href='$link'>Next ></a>";
+		$retour->next =  "<a href='$link'>&rarr;</a>";
 	}else{
 		$retour->next = false;
 	}
@@ -373,7 +375,7 @@ function transplant_nav(){
 	if($idprev  != -1){
 		$link = get_permalink($idprev);
 	
-		$retour->prev = "<a href='$link'>< Prev</a>";
+		$retour->prev = "<a href='$link'>&larr;</a>";
 	}else{
 		$retour->prev = false;
 	}

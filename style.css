@@ -318,9 +318,9 @@ a{
 #contenu #project-nav .button{
 	border: 0;
 	background: none;
-	width: 50%;
+	/* width: 50%; */
 	display: inline-block;
-	/*border-bottom: solid 1px rgba(110,93,91,0.3);*/
+	/* border-bottom: solid 1px rgba(110,93,91,0.3); */
 	padding: 0 10px 10px;
 	margin-bottom: 0 0 10px;
 	color: #6E5D5B;
@@ -1111,7 +1111,7 @@ a.bx-nexto {width: 100%;}
  */
 
 fieldset{
-	margin:0 10px;
+	margin:0;
 	padding:0;
 	border:0;
 }
@@ -1132,6 +1132,7 @@ fieldset input, fieldset textarea{
 	border:solid 1px #6E5D5B;
 	color:#6E5D5B;
 	line-height:1em;
+	padding: 3px;
 }
 
 fieldset textarea{
@@ -1165,6 +1166,8 @@ p.submit{
 	color:#6E5D5B;
 	padding:0px 3px;
 }
+
+.frm_submit input[type=submit],
 #footer input[type=submit]{
 	border-radius:2px;
 	border: solid 1px #6E5D5B;
@@ -1174,6 +1177,7 @@ p.submit{
 	height: 22px;
 }
 
+.frm_submit input[type=submit]:hover,
 #footer input[type=submit]:hover{
 	color: #000;
 }

@@ -209,51 +209,72 @@ $(function(){
 			});
 		}
 
-		/*$('#galerie #horizontal img').load(function(){
-			if($('#galerie').length > 0){ 		$('#galerie').jScrollPane().data().jsp.destroy(); }
+		$('#galerie #horizontal').imagesLoaded()
+		.always( function( instance ) {
+			console.log('all images loaded');
+		})
+		.done( function( instance ) {
+			console.log('all images successfully loaded');
 
-			$("#galerie #horizontal .image").height( $(window).height() - hauteur - 10 );
+			if(stageW >=  700){
 
-            $('#galerie').bind(
-				'jsp-initialised',
-				function(event, isScrollable)
-				{
-					// POUR FAIRE LE DRAG SCROLL
-					//http://jsfiddle.net/PWYpu/28/
-					//var leftScroll = $('#mosaic-wrapper').offset().left;
-					//var endScroll = leftScroll + $('#mosaic-wrapper').width();
-					//var f = ($('#mosaic-wrapper').width() / $('#mosaic-wrapper .jspPane').width())*5;
-					var startX;
-					var startXX;
-					var initX;
-					var delta = 0;
-					var selection = false ;
+                hauteur = 255 + 40 + 20;
+                /*if(stageW >=  1600){
+                    hauteur = 10 + 40;
+                }*/
+                
+                $("#galerie #horizontal .image").height( $(window).height() - hauteur - 10 );
 
-					$(document).mousemove(function(e){
-						var mX;
-						var delta = startX - e.pageX;
+                $('#galerie').bind(
+					'jsp-initialised',
+					function(event, isScrollable)
+					{
+						var startX;
+						var startXX;
+						var initX;
+						var delta = 0;
+						var selection = false ;
 
-						if(selection){
-							//$('#mosaic-wrapper').data('jsp').scrollToX(e.pageX-delta);
-							$('#galerie').data('jsp').scrollToX(initX+delta);
-						}
-						//window.status = e.pageX+' '+leftScroll+' '+ endScroll+' '+mX +' '+delta;
-						window.status = delta;
-					})   
-					    
-					$('#galerie').mousedown(function(e){
-						initX = $('#galerie').data('jsp').getContentPositionX();
-						startX = e.pageX;
-						startXX = $('#galerie .jspPane').offset().left;
-						selection = true ;
-						e.preventDefault();
-					})
-					$(window).mouseup(function(){
-						selection = false ;
-					})
-				}
-			).jScrollPane();
-		})*/
+						$(document).mousemove(function(e){
+							var mX;
+							var delta = startX - e.pageX;
+
+							if(selection){
+								//$('#mosaic-wrapper').data('jsp').scrollToX(e.pageX-delta);
+								$('#galerie').data('jsp').scrollToX(initX+delta);
+							}
+							//window.status = e.pageX+' '+leftScroll+' '+ endScroll+' '+mX +' '+delta;
+							window.status = delta;
+						})   
+						    
+						$('#galerie').mousedown(function(e){
+							initX = $('#galerie').data('jsp').getContentPositionX();
+							startX = e.pageX;
+							startXX = $('#galerie .jspPane').offset().left;
+							selection = true ;
+							e.preventDefault();
+						})
+						$(window).mouseup(function(){
+							selection = false ;
+						})
+					}
+				).jScrollPane();
+
+
+            }else{
+
+                $("#galerie #horizontal .image").height( 'auto' );
+                wall.destroy();
+                if($('#galerie').length > 0){ 		$('#galerie').jScrollPane().data().jsp.destroy(); }
+            }
+		})
+		.fail( function() {
+			console.log('all images loaded, at least one is broken');
+		})
+		.progress( function( instance, image ) {
+			var result = image.isLoaded ? 'loaded' : 'broken';
+			console.log( 'image is ' + result + ' for ' + image.img.src );
+		});
 
 
 		/**

@@ -13,10 +13,9 @@
             </div>
         </div>
     
-        <div id="project-nav" class="nav">
+        <!--<div id="project-nav" class="nav">
             <div class="container">
                 <?php $nav = transplant_nav();?>
-                <!--<span class="prev"><?php echo $nav->prev; ?></span> <span class="next"><?php echo $nav->next;  ?></span>-->
                 <button id="prev"><?php echo $nav->prev; ?></button>
                 <button id="next"><?php echo $nav->next; ?></button>
 
@@ -32,7 +31,7 @@
                 </ul>
                 <?php endif; ?>
             </div>
-        </div>
+        </div>-->
     </div>
 
     <div id="post_container"></div>
