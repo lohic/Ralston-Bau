@@ -9,7 +9,7 @@
     <meta name="identifier-url" content="<?php bloginfo('url'); ?>" />
 
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
-    <link rel="stylesheet"    href="<?php bloginfo('stylesheet_url'); ?>?v=11" type="text/css" />
+    <link rel="stylesheet"    href="<?php bloginfo('stylesheet_url'); ?>?v=12" type="text/css" />
     
     <link rel="alternate" href="<?php bloginfo('rss2_url'); ?>" type="application/rss+xml" title="RSS 2.0"  />
     <link rel="alternate" href="<?php bloginfo('rss_url'); ?>"  type="text/xml" title="RSS .92"  />
@@ -25,7 +25,7 @@
 
 <body class="">
 
-    <!--<div id="loading"></div>-->
+    <div id="loading"></div>
 
     <div id="page">
     	

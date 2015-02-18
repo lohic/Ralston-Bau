@@ -567,14 +567,6 @@ a{
 	font-size: 1.5em;
 	font-weight: 300;
 	letter-spacing: 0.07em;
-	/*-webkit-transform : scale(1);
-	   -moz-transform : scale(1);
-		-ie-transform : scale(1);
-			transform : scale(1);
-	-webkit-transition: 0.5s ease-in-out;
-       -moz-transition: 0.5s ease-in-out;
-        -ie-transition: 0.5s ease-in-out;
-    		transition: 0.5s ease-in-out;*/
 }
 
 .item.BR h2{
@@ -591,25 +583,21 @@ a{
 .box1x1{
 	width:300px;
 	height:200px;
-	/*background:#F00;*/
 }
 
 .box1x2{
 	width:300px;
 	height:400px;
-	/*background:#0F0;*/
 }
 
 .box2x2{
 	width:600px;
 	height:400px;
-	/*background:#00F;*/
 }
 
 .box2x3{
 	width:600px;
 	height:600px;
-	/*background:#FF0;*/
 }
 
 
@@ -648,12 +636,13 @@ a{
 	margin: 0;
 	padding: 0;
 	width: 100%; 
-	cursor: pointer;
+	/*cursor: pointer;*/
 	font-size: 0.8em;
 }
 
 .slide .date{
-	float: right;
+	/*float: right;*/
+	margin-bottom: 4px;
 }
 
 .slide a{
@@ -663,9 +652,14 @@ a{
 
 .slide h1{
 	font-weight: 400;
-	line-height: 0.8;
+	line-height: 1;
 	font-size: 1.1em;
 	margin-bottom: 0.5em;
+	color: #FFF;
+}
+
+.slide h1 .date{
+	color:#000;
 }
 
 .slide p{
@@ -673,6 +667,10 @@ a{
 	font-size: 1em;
 }
 
+.slide p img{
+	max-width: 100%;
+	height:auto;
+}
 
 
 
@@ -1416,6 +1414,26 @@ input.wysija-submit.wysija-submit-field{
 
 	#footer-menu-right input[type=text]{
 		/*display: block; */
+	}
+
+	#footer .right{
+		float: none;
+	}
+	#footer .left{
+		float: none;
+	}
+
+	#footer .bottom-menu{
+		width: 100%;
+	}
+
+	#footer .left .bottom-menu{
+		margin-left: 0;
+		text-align: center;
+	}
+
+	#footer .left .bottom-menu li{
+		display: inline-block;
 	}
 
 }

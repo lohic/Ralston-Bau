@@ -5,7 +5,7 @@
 <div id="wall">
 
 	<?php if ( is_home() || is_singular('post') ) : ?>
-		<div class="item box1x1 news TL" id="slides" >
+		<div class="item box1x2 news TL" id="slides" >
 			<h2 class="news-title">News</h2>
 			<div class="slides_container">
 				<div class="bxslider">
@@ -18,9 +18,10 @@
 				if(have_posts()) : ?>
 				<?php while(have_posts()) : the_post(); ?>
 					<div class="slide scroll-pane">
-						<p class="date"><?php the_time('j F Y') ?></p>
-						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-						<?php the_excerpt(); ?>
+						<!--<p class="date"><?php the_time('j F Y') ?></p>-->
+						<h1><span class="date"><?php the_time('j F Y') ?>: </span> <!--<a href="<?php the_permalink(); ?>">--><?php the_title(); ?><!-- </a> --></h1>
+						<?php //the_excerpt(); ?>
+						<?php the_content(); ?>
 					</div>
 				    
 				    

@@ -62,9 +62,9 @@
 
 	
     </div>
-    <div id="alert">
+    <!--<div id="alert">
         <p>Your browser window seems to be to small.<br/>Click to hide this alert.</p>
-    </div>
+    </div>-->
 
     
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js?97273-1352487961"></script>

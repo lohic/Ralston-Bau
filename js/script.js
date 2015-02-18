@@ -1,8 +1,8 @@
-/**********************************
-@ WP TRANSPLANT THEME SCRIPTS	  @
-@ URL : http://www.transplant.nu  @
-@ Author : Loïc Horellou		  @
-**********************************/
+/**************************************
+@ WP RALSTON & BAU THEME SCRIPTS	  @
+@ URL : http://www.ralstonbau.com/    @
+@ Author : Loïc Horellou		      @
+***************************************/
 var theTimer;
 
 $ = jQuery.noConflict();
@@ -147,17 +147,15 @@ $(function(){
 					}
 					
 	                
-	                if($('#post>.content').length > 0){	$('#post>.content').jScrollPane().data().jsp.destroy(); }
-
+	                //if($('#post>.content').length > 0){	$('#post>.content').jScrollPane().data().jsp.destroy(); }
+					//$('#post_container').empty();
 					
-					$('#post_container').empty();
 					//$('#wpadminbar').empty();
 
 					//console.log( retour.find( '#contenu' ).html() );
 					//console.log( retour.find( '#galerie' ).html() );
-
 					
-					$('#post_container').html( retour.find( '#post_container' ).html() );
+					//$('#post_container').html( retour.find( '#post_container' ).html() );
 					//$('#wpadminbar').html( retour.find( '#wpadminbar' ).html() );
 
 					// https://bitbucket.org/tehrengruber/jquery.dom.path/src
@@ -214,7 +212,11 @@ $(function(){
 			console.log('all images loaded');
 		})
 		.done( function( instance ) {
+
+
 			console.log('all images successfully loaded');
+
+			var stageW = $(window).width();
 
 			if(stageW >=  700){
 
@@ -222,8 +224,13 @@ $(function(){
                 /*if(stageW >=  1600){
                     hauteur = 10 + 40;
                 }*/
+
+                if($('#galerie').length > 0){ 		$('#galerie').jScrollPane().data().jsp.destroy(); }
                 
-                $("#galerie #horizontal .image").height( $(window).height() - hauteur - 10 );
+                //$("#galerie #horizontal .image").height( $(window).height() - hauteur - 10 );
+
+
+
 
                 $('#galerie').bind(
 					'jsp-initialised',
@@ -260,6 +267,8 @@ $(function(){
 					}
 				).jScrollPane();
 
+				$("#loading").hide();
+
 
             }else{
 
@@ -274,6 +283,10 @@ $(function(){
 		.progress( function( instance, image ) {
 			var result = image.isLoaded ? 'loaded' : 'broken';
 			console.log( 'image is ' + result + ' for ' + image.img.src );
+
+			if(stageW >=  700){
+				$("#loading").show();
+			}
 		});
 
 
@@ -319,6 +332,7 @@ $(function(){
 	    });
 
 
+	    // StateChangergement des actus
 	    $('.slide').click(function(event){
 	    	$(this).find('a').trigger('click');
 	    });
@@ -423,13 +437,14 @@ $(function(){
 	                $('#menu-main-menu').show();
 
 	                $('.bxslider').bxSlider({
+	                	autoStart: true,
 						speed: 150,
 						mode: 'horizontal',
-						infiniteLoop: false,
+						infiniteLoop: true,
 						pager: false,
-						pagerType: 'short',
+						/*pagerType: 'short',
 						pagerLocation: 'bottom',
-						pagerShortSeparator: ' sur ',
+						pagerShortSeparator: ' sur ',*/
 						startSlide: 0,
 						adaptiveHeight: true,
 					});

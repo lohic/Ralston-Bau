@@ -16,7 +16,7 @@
     <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
 
-    <div id="post_container">
+    <!--<div id="post_container">
         <div id="post">
         	<div class="content">
         		<div class="container">
@@ -28,7 +28,7 @@
     	        </div>
     	    </div>
         </div>
-    </div>
+    </div>-->
 
    	<?php endwhile; ?>
 	<?php endif; ?>
